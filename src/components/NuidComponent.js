@@ -1,7 +1,7 @@
 import React from "react";
 import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 import NuidService, {findAllNuids} from '../services/NuidService'
-import {Link} from "react-router-dom";
+
 
 class NuidComponent extends React.Component{
     constructor(props) {

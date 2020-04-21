@@ -1,6 +1,6 @@
 import React from "react";
 import DomainItemComponent from "./DomainItemComponent";
-import DomainService, {addDomain, deleteDomain, findDomainsForNuid} from "../services/DomainService"
+import DomainService, { deleteDomain, findDomainsForNuid} from "../services/DomainService"
 import "../css/BonusStyle.css"
 
 class DomainComponent extends React.Component {
