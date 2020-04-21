@@ -54,3 +54,6 @@
     margin-top: 7px;
     float: right;
 }
+.unselected:hover{
+    background-color: #b3e6ff;
+}

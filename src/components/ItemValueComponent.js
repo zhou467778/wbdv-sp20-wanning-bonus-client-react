@@ -12,8 +12,9 @@ class ItemValueComponent extends React.Component {
             selectingItem: '',
             editing: false,
             selecting: false,
-            itemField:'',
-            itemValue:''
+            itemField: '',
+            itemValue: '',
+            item:''
         }
     }
 
@@ -44,7 +45,17 @@ class ItemValueComponent extends React.Component {
         this.setState({selectingItem: item._id})
     }
 
+    setField = (field) => {
+        this.setState({itemField: field})
 
+    }
+
+    setValue = (value) => {
+        this.setState({itemValue: value})
+    }
+    setItem = (item) => {
+        this.setState({item: item})
+    }
 
 
     render() {
@@ -69,7 +80,9 @@ class ItemValueComponent extends React.Component {
                                     {this.state.editingItem !== item._id &&
 
                                     <Link to={`/wam/${this.props.nuId}/${this.props.domain}/${item._id}/list`}>
-                                        <a className="field col-6" onClick={() => {this.select(item)}
+                                        <a className="field col-6" onClick={() => {
+                                            this.select(item)
+                                        }
                                         }>
                                             {item[key]}
                                         </a>
@@ -78,8 +91,13 @@ class ItemValueComponent extends React.Component {
                                     {this.state.editingItem === item._id &&
                                     <div className="form-group">
                                         <a className="item-title">{key}</a>
-                                        <input value={item[key]}
+                                        <input value={this.state.item[key]}
                                                className={"form-control col-7 change-title"}
+                                               onChange={(e) => this.setState({
+                                                   item:{
+                                                       [key]: e.target.value
+                                                   }
+                                               })}
                                         />
                                         <hr/>
                                     </div>}
@@ -91,15 +109,16 @@ class ItemValueComponent extends React.Component {
                                 <input className={"form-control col-2 new-field"} placeholder="New Field"/>
                                 <input className={"form-control col-7 new-field-value"} placeholder="New field value"/>
                                 <div className="buttons">
-                                <button type="button" className="btn btn-danger delete-item">Delete</button>
-                                <button type="button" className="btn btn-success save-item">Save</button>
+                                    <button type="button" className="btn btn-danger delete-item">Delete</button>
+                                    <button type="button" className="btn btn-success save-item">Save</button>
                                 </div>
                             </div>
                             }
                             {this.state.editingItem !== item._id &&
                             <button type="button" className="btn btn-warning edit-item"
                                     onClick={() => {
-                                        this.edit(item)
+                                        this.edit(item);
+                                        this.setItem(item);
                                     }}
                             >Edit</button>}
                         </div>
