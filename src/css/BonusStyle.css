@@ -1,0 +1,56 @@
+.domain-edit{
+    float: right;
+}
+.add-domain{
+    display: inline-block;
+    margin-left: 5px;
+}
+.add-domain-input{
+    display: inline-block;
+}
+.editing-domain-name{
+    margin-top: 5px;
+}
+.edit-save{
+    margin-left: 5px;
+}
+.edit-delete{
+    margin-left: 5px;
+}
+.field-name{
+    margin-top: 8px;
+}
+.editing-domain-field{
+    margin-top: 5px;
+}
+.select-domain-type{
+    margin-top: 5px;
+}
+.edit-item{
+    float: right;
+}
+.selected{
+    background-color: #b3e6ff;
+
+}
+.unselected{
+    background-color: white;
+}
+.item-title{
+    display: inline-block;
+}
+.change-title{
+    display: inline-block;
+    margin-left: 8px;
+}
+.new-field{
+    display: inline-block;
+}
+.new-field-value{
+    display: inline-block;
+    margin-left: 8px;
+}
+.buttons{
+    margin-top: 7px;
+    float: right;
+}
